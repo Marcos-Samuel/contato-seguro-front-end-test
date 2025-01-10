@@ -29,6 +29,7 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    "react-refresh/only-export-components": "off"
   },
   {
     files: ['**/*.js'],

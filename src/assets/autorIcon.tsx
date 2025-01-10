@@ -3,7 +3,6 @@ import styled from "styled-components";
 interface AuthorIconProps extends React.SVGProps<SVGSVGElement> {
   isActive?: boolean;
 }
-
 const IconContainer = styled.svg<AuthorIconProps>`
   width: 50px;
   height: 50px;

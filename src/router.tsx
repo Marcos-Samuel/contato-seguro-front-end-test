@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Author from './pages/Author';
+import BookPage from './pages/BookPage';
+import AuthorPage from './pages/AuthorPage';
 
 export default function MyRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/author" element={<Author />} />
+      <Route path="/" element={<BookPage />} />
+      <Route path="/authors" element={<AuthorPage />} />
     </Routes>
   );
 }

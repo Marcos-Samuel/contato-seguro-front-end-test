@@ -4,8 +4,14 @@ interface ITable {
   action?: boolean;
 }
 
-export const Table = styled.table`
+export const Conteiner = styled.div`
   width: 80%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Table = styled.table`
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   margin-top: 48px;

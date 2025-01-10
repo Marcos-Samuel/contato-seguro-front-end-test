@@ -81,13 +81,11 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     cursor: pointer;
-    color: var(--downriver-color);
   }
 
   a:hover, 
   a:focus, 
   a:active {
     transform: scale(0.98);
-    color: var(--hover-color); 
   }
 `;

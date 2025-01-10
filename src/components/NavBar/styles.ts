@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface ISidBar {
@@ -64,4 +65,16 @@ export const SidebarItem = styled.li<ISidBar>`
 
 export const Text = styled.p<ISidBar>`
   color: ${({ isActive }) => (isActive ? '#da0175' : '#343447')};
+`;
+
+export const NavLinkStyled = styled(NavLink)`
+  text-decoration: none;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-top: 45px;
 `;
