@@ -1,24 +1,30 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-interface IconProps {
+interface BookIconProps {
   isActive?: boolean;
 }
 
-const IconContainer = styled.svg<IconProps>`
-  width: 50px;
-  height: 50px;
-  fill: ${({ isActive }) => (isActive ? "#da0175" : "#343447")};
+const IconContainer = styled.svg<BookIconProps>`
+  fill: ${({ isActive, theme }) =>
+    isActive
+      ? theme.colors.primary.purple[400]
+      : theme.colors.system.black[400]};
   transition: fill 0.3s ease;
 
   &:hover {
-    fill: ${({ isActive }) => (isActive ? "#b0155a" : "#555")};
+    fill: ${({ isActive, theme }) =>
+      isActive
+        ? theme.colors.primary.purple[400]
+        : theme.colors.system.black[400]};
   }
 `;
 
-const BookIcon: React.FC<IconProps> = ({ isActive, ...props}) => (
+const BookIcon: React.FC<BookIconProps> = ({ isActive, ...props }) => (
   <IconContainer
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 50 50"
+    width="40px"
+    height="40px"
     isActive={isActive}
     {...props}
   >

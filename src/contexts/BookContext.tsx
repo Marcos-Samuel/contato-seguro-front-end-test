@@ -1,8 +1,17 @@
-import React, { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { getFromLocalStorage, saveToLocalStorage } from "../services/storage/localStorageService";
-import { Book } from "../models/interface/api/book.interface";
+import React, {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import {
+  getFromLocalStorage,
+  saveToLocalStorage,
+} from '../services/storage/localStorageService';
+import { Book } from '../models/interface/api/book.interface';
 
-const BOOKS_KEY = "books";
+const BOOKS_KEY = 'BOOKS_KEY';
 
 interface BookContextProps {
   books: Book[];
@@ -11,13 +20,13 @@ interface BookContextProps {
   deleteBook: (id: string) => void;
 }
 
-interface BookProviderProps{
-    children: ReactNode;
+interface BookProviderProps {
+  children: ReactNode;
 }
 
 const BookContext = createContext<BookContextProps | undefined>(undefined);
 
-export const BookProvider: React.FC<BookProviderProps> = ({ children}) => {
+export const BookProvider: React.FC<BookProviderProps> = ({ children }) => {
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
@@ -46,9 +55,7 @@ export const BookProvider: React.FC<BookProviderProps> = ({ children}) => {
   };
 
   return (
-    <BookContext.Provider
-      value={{ books, addBook, updateBook, deleteBook }}
-    >
+    <BookContext.Provider value={{ books, addBook, updateBook, deleteBook }}>
       {children}
     </BookContext.Provider>
   );
@@ -57,7 +64,7 @@ export const BookProvider: React.FC<BookProviderProps> = ({ children}) => {
 export const useBookContext = () => {
   const context = useContext(BookContext);
   if (!context) {
-    throw new Error("useBookContext must be used within a BookProvider");
+    throw new Error('useBookContext must be used within a BookProvider');
   }
   return context;
 };

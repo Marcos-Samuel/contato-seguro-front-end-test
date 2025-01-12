@@ -1,25 +1,41 @@
-import React, { ReactNode } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import { Cross2Icon } from "@radix-ui/react-icons";
-import { ButtonModal, Content, ContentIcon, Overlay, StyledIconButton, Title } from "./styles";
+import React, { ReactNode } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { Cross2Icon } from '@radix-ui/react-icons';
+import { Content, ContentIcon, Overlay, StyledIconButton } from './styles';
+import Typography from '../Typography';
+import { theme } from '../../styles/theme';
+import ButtonComponent from '../Button';
 
 interface ModalProps {
   children: ReactNode;
-  title: string;
+  title?: string;
   open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>; 
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  disabled?: boolean;
+  hidden?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({ children, title, open, setOpen }) => (
+const Modal: React.FC<ModalProps> = ({
+  children,
+  title,
+  open,
+  setOpen,
+  disabled,
+  hidden,
+}) => (
   <Dialog.Root open={open} onOpenChange={setOpen}>
     <Dialog.Trigger asChild>
-      <ButtonModal purple>{ title }</ButtonModal>
+      <ButtonComponent disabled={disabled} hidden={hidden}>
+        {title}
+      </ButtonComponent>
     </Dialog.Trigger>
     <Dialog.Portal>
       <Overlay />
       <Content>
         <ContentIcon>
-          <Title>{title}</Title>
+          <Typography variant="h3" size="1" weight="16px" color="primary">
+            {title}
+          </Typography>
           <Dialog.Close asChild>
             <StyledIconButton aria-label="Close">
               <Cross2Icon />

@@ -1,6 +1,7 @@
-export const capitalizeName = (name: string): string => {
+export function capitalizeName(name: string): string {
   return name
+    .trim()
     .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .map((word) => word[0].toLocaleUpperCase() + word.slice(1))
     .join(' ');
-};
+}

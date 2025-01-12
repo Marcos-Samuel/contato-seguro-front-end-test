@@ -1,8 +1,15 @@
 import React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { ButtonModal } from '../../Modal/styles';
-import { ContentInput, Form, Input, Label, Option, Select } from '../styles';
+import {
+  ContentButton,
+  ContentInput,
+  Form,
+  Input,
+  Label,
+  Option,
+  Select,
+} from '../styles';
 import { Book } from '../../../models/interface/api/book.interface';
 import { useAuthorContext } from '../../../contexts/AuthorContext';
 import { v4 as uuidv4 } from 'uuid';
@@ -11,13 +18,14 @@ import { Dialog } from '@radix-ui/themes';
 import { FormBookData } from '../../../models/interface/form/book.interface';
 import { bookSchema } from '../../../models/schemas/book.schema';
 import { useBookContext } from '../../../contexts/BookContext';
+import Button from '../../Button';
 
 interface FormBookProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const FormBook: React.FC<FormBookProps> = ({ setOpen }) => {
-  const { authors,  } = useAuthorContext();
+  const { authors } = useAuthorContext();
   const { addBook } = useBookContext();
   const {
     register,
@@ -46,33 +54,48 @@ const FormBook: React.FC<FormBookProps> = ({ setOpen }) => {
       <ContentInput>
         <Label>Nome do livro</Label>
         <Input {...register('name')} />
-        {errors.name && <Typography variant="span" error>{errors.name.message}</Typography>}
+        {errors.name && (
+          <Typography variant="span" size="12px" color="error">
+            {errors.name.message}
+          </Typography>
+        )}
       </ContentInput>
 
       <ContentInput>
         <Label>Autor</Label>
         <Select {...register('author_id')}>
-          <Option  value="">Selecione um autor</Option >
+          <Option value="">Seleciona Autor</Option>
           {authors.map((author) => (
-            <Option  key={author.id} value={author.id}>
+            <Option key={author.id} value={author.id}>
               {author.name}
-            </Option >
+            </Option>
           ))}
         </Select>
-        {errors.author_id && <Typography variant="span" error>{errors.author_id.message}</Typography>}
+        {errors.author_id && (
+          <Typography variant="span" size="12px" color="error">
+            {errors.author_id.message}
+          </Typography>
+        )}
       </ContentInput>
 
       <ContentInput>
         <Label>Páginas</Label>
-        <Input  {...register('pages')} />
-        {errors.pages && <Typography variant="span" error>{errors.pages.message}</Typography>}
+        <Input {...register('pages')} />
+        {errors.pages && (
+          <Typography variant="span" size="12px" color="error">
+            {errors.pages.message}
+          </Typography>
+        )}
       </ContentInput>
+      <ContentButton>
+        <Button type="submit">Enviar</Button>
 
-      <ButtonModal type="submit" purple>Enviar</ButtonModal>
-
-      <Dialog.Close>
-        <ButtonModal type="button" purple>Fechar</ButtonModal>
-      </Dialog.Close>
+        <Dialog.Close>
+          <Button type="button" variant="danger">
+            Fechar
+          </Button>
+        </Dialog.Close>
+      </ContentButton>
     </Form>
   );
 };

@@ -17,6 +17,26 @@ export const Table = styled.table`
   margin-top: 48px;
   border-radius: 12px;
 `;
+
+export const Body = styled.tbody`
+  display: block;
+  max-height: 70vh;
+  overflow-y: auto;
+  width: 100%;
+`;
+
+export const TableRow = styled.tr`
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+`;
+
+export const TableWrapper = styled.div`
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 12px;
+`;
+
 export const TableHead = styled.th`
   font-weight: bold;
   background-color: ${({ theme }) => theme.colors.primary.purple[300]};
@@ -31,8 +51,6 @@ export const TableHead = styled.th`
 `;
 
 export const THeader = styled.thead``;
-export const TableRow = styled.tr``;
-export const Body = styled.tbody``;
 
 export const TableDescriptions = styled.td<ITable>`
   background-color: ${({ theme, action }) =>
@@ -43,6 +61,15 @@ export const TableDescriptions = styled.td<ITable>`
   border-bottom: 1px solid ${({ theme }) => theme.colors.system.black[100]};
   border-right: 1px solid ${({ theme }) => theme.colors.system.black[100]};
   border-left: 1px solid ${({ theme }) => theme.colors.system.black[100]};
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 540px;
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+  }
 `;
 
 export const TableAction = styled.div`
@@ -135,8 +162,20 @@ export const ButtonNavigation = styled.button`
     margin: 0;
   }
 `;
+
 export const LinkExternal = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.primary.purple[300]};
   font-weight: bold;
+`;
+
+export const ContentModal = styled.div`
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 10px;
 `;

@@ -1,19 +1,28 @@
-import { Container, ContentTitle, Title } from "./styles";
+import AuthorIcon from '../../assets/author.Icon';
+import BookIcon from '../../assets/book.Icon';
+import Typography from '../Typography';
+import { Container, ContentTitle } from './styles';
 
 interface HeaderProps {
-  title: string
+  title: string;
 }
 
-const Header: React.FC<HeaderProps> = ({title}) => {
+const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <Container>
       <ContentTitle>
-        <Title>{title}</Title>
+        {title === 'Livros' ? (
+          <BookIcon isActive={title === 'Livros'} />
+        ) : (
+          <AuthorIcon isActive={title === 'Autores'} />
+        )}
+
+        <Typography variant="h1" color="primary">
+          {title}
+        </Typography>
       </ContentTitle>
-      
-    </Container>)
-    
-  ;
-}
+    </Container>
+  );
+};
 
 export default Header;

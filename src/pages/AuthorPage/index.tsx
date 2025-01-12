@@ -3,10 +3,10 @@ import AuthorScreen from '../../screen/authorScreen';
 
 const AuthorPage: React.FC = () => {
   return (
-  <>
-    <AuthorScreen/>
+    <>
+      <AuthorScreen />
     </>
-  )
-}
-  
+  );
+};
+
 export default AuthorPage;

@@ -41,7 +41,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     min-height: 100vh;
     line-height: 1.5;
-    font-family: 'Regular', sans-serif;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
   }
 
   h1, h2, h3, h4,

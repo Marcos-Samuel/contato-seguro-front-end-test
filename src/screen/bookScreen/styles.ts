@@ -12,4 +12,6 @@ export const ContentModal = styled.div`
   width: 80%;
   display: flex;
   margin-top: 1rem;
+  justify-content: end;
+  gap: 1rem;
 `;

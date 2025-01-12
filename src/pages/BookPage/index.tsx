@@ -3,9 +3,9 @@ import BookScreen from '../../screen/bookScreen';
 const BookPage: React.FC = () => {
   return (
     <>
-     <BookScreen/>
+      <BookScreen />
     </>
   );
-}
+};
 
 export default BookPage;
