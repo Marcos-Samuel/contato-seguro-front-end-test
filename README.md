@@ -24,9 +24,9 @@
 
 ## 📝 Pages <a id="-pages"></a>
 
-![Autores](![alt Autores](./src/assets/img/autores.png))
-![Cadastro](![alt Modal Livros](./src/assets/img/cadastro.png))
-![Delete](![alt Delete](./src/assets/img/delete.png))
+![alt Autores](./src/assets/img/autores.png)
+![alt Modal Livros](./src/assets/img/cadastro.png)
+![alt Delete](./src/assets/img/delete.png)
 
 ## 📝 Sobre <a id="-sobre"></a>
 
