@@ -5,7 +5,7 @@ export const Main = styled.main`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 270px);
+  min-height: calc(100vh - 300px);
 `;
 
 export const ContentModal = styled.div`

@@ -6,6 +6,7 @@ import {
   Logo,
   Nav,
   NavLinkStyled,
+  Text,
 } from './styles';
 
 const Footer: React.FC = () => {
@@ -14,8 +15,12 @@ const Footer: React.FC = () => {
       <ContentFooter>
         <Logo>Biblioteca</Logo>
         <Nav>
-          <NavLinkStyled to="/">Livros</NavLinkStyled>
-          <NavLinkStyled to="/authors">Autor</NavLinkStyled>
+          <NavLinkStyled to="/">
+            {({ isActive }) => <Text isActive={isActive}>Livros</Text>}
+          </NavLinkStyled>
+          <NavLinkStyled to="/authors">
+            {({ isActive }) => <Text isActive={isActive}>Autores</Text>}
+          </NavLinkStyled>
         </Nav>
         <CopyRight>&copy; 2025 My Website. All rights reserved.</CopyRight>
       </ContentFooter>
