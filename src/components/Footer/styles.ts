@@ -11,9 +11,8 @@ export const Container = styled.footer`
 `;
 
 export const ContentFooter = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.primary.purple[200]};
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -22,7 +21,7 @@ export const ContentFooter = styled.div`
   font-size: 14px;
   text-align: center;
 
-  border-top: 1px solid ${({ theme }) => theme.colors.primary.purple[300]};
+  border-top: 1px solid ${({ theme }) => theme.colors.system.black[100]};
 `;
 
 export const Logo = styled.h1`

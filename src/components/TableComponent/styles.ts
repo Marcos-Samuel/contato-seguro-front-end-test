@@ -20,7 +20,7 @@ export const Table = styled.table`
 
 export const Body = styled.tbody`
   display: block;
-  max-height: 70vh;
+  max-height: 52vh;
   overflow-y: auto;
   width: 100%;
 `;
