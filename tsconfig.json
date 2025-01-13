@@ -14,7 +14,7 @@
     "esModuleInterop": true,
     "target": "ESNext",
     "strict": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "composite": true,
     "baseUrl": ".",
     "paths": {
