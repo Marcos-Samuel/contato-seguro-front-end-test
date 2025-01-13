@@ -14,9 +14,10 @@
     "esModuleInterop": true,
     "target": "ESNext",
     "strict": true,
-    "jsx": "react-jsx",
-    "composite": true,
+    "jsx": "react",
     "baseUrl": ".",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "paths": {
       "*": [
         "node_modules/*"
@@ -31,6 +32,7 @@
     ]
   },
   "include": [
-    "cypress.d.ts"
+    "cypress.d.ts",
+    "src/**/*"
   ]
 }

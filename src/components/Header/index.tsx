@@ -1,3 +1,4 @@
+import React from 'react';
 import AuthorIcon from '../../assets/author.Icon';
 import BookIcon from '../../assets/book.Icon';
 import Typography from '../Typography';
