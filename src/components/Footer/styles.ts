@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+interface ISidBar {
+  isActive: boolean;
+}
 
 export const Container = styled.footer`
-  height: 170px;
+  height: 200px;
   display: flex;
   justify-content: center;
 `;
@@ -53,4 +56,12 @@ export const CopyRight = styled.p`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.primary.purple[300]};
   margin-top: 2rem;
+`;
+export const Text = styled.p<ISidBar>`
+  color: ${({ isActive, theme }) =>
+    isActive
+      ? theme.colors.primary.purple[300]
+      : theme.colors.system.black[400]};
+
+  font-family: 'Rubik', sans-serif;
 `;

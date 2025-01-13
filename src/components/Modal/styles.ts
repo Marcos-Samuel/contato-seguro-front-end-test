@@ -30,7 +30,7 @@ export const Content = styled(Dialog.Content)`
   background: linear-gradient(
     135deg,
     #fff,
-    ${({ theme }) => theme.colors.primary.purple[300]}
+    ${({ theme }) => theme.colors.primary.purple[200]}
   );
 
   border: 2px solid ${({ theme }) => theme.colors.system.black[400]};
