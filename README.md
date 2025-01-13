@@ -1,50 +1,117 @@
-# React + TypeScript + Vite
+<table align="right">
+  <tr>
+    <td>
+      <a href="README.md">🇧🇷 Português</a>
+    </td>
+  </tr>
+</table>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![luk4x-repo-status](https://img.shields.io/badge/status-developing-lightgrey?style=for-the-badge&logo=headspace&logoColor=yellow&color=lightgrey)
+![luk4x-repo-license](https://img.shields.io/github/license/Luk4x/apple-store?style=for-the-badge&logo=unlicense&logoColor=lightgrey)
 
-Currently, two official plugins are available:
+## Cantato Seguro
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-install">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-pages">Páginas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-componentes">Componentes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+<br>
+<br>
 
-## Expanding the ESLint configuration
+## 📝 Pages <a id="-pages"></a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Autores](![alt Autores](./src/assets/img/autores.png))
+![Cadastro](![alt Modal Livros](./src/assets/img/cadastro.png))
+![Delete](![alt Delete](./src/assets/img/delete.png))
 
-- Configure the top-level `parserOptions` property like this:
+## 📝 Sobre <a id="-sobre"></a>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Este projeto é uma aplicação desenvolvida com React e Vite, gerenciamento de uma biblioteca. O projeto também integra com o LocalStorage para persistir dados entre sessões e inclui testes para garantir a qualidade do código.
+
+## 📝 Funcionalidades
+
+- **Cadastrar Autor:**  
+  A aplicação permite que os usuários adicionem novos autores a aplicação.
+
+- **Cadastrar Livros:**
+  A aplicação permite que os usuários adicionem novos livros vinculados aos autores.
+
+- **Deletar Livros:**
+  A aplicação permite que o usuários delete um livro.
+
+- **Deletar Autor:**
+  A aplicação permite que o usuários delete um autor, assim deletando todos os livros vinculados a ele.
+- **Persistência de Dados com LocalStorage:**  
+  Para garantir que os dados dos leads sejam mantidos entre as sessões, a aplicação utiliza `localStorage`. Dessa forma, os leads adicionados ou modificados permanecem disponíveis mesmo após o fechamento do navegador, proporcionando uma experiência de usuário mais fluida.
+
+## 🚀 Tecnologias Utilizadas <a id="-tecnologias"></a>
+
+- **React:** Biblioteca para construção da interface do usuário.
+- **Vite:** Ferramenta de build para um desenvolvimento rápido.
+- **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
+- **Cypress:** Framework de testes.
+- **LocalStorage:** Para armazenamento de dados no navegador.
+- **Zod:** Biblioteca para implementar funcionalidades de validação.
+- **React Hook Form:** Biblioteca para implementar funcionalidades de manipulação de formularios.
+
+## Instalação
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. **Clone o repositório:**
+
+```bash
+   git clone git@github.com:Marcos-Samuel/just-cash-front.git
+   ou
+   git clone https://github.com/Marcos-Samuel/just-cash-front.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Navegue até o diretório do projeto:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+ cd contato-seguro-front-end-test
 ```
+
+3. **Instale as dependências**
+
+```bash
+  npm install
+```
+
+4.**Inicie o servidor de desenvolvimento**
+
+```bash
+  npm rum dev
+```
+
+O projeto estara disponivel na rota:
+http://localhost:5173/
+
+## 📝 DEPLOY
+
+## 📝 Estrutura do Projeto
+
+O projeto segue boas práticas de desenvolvimento, com uma clara separação de responsabilidades entre os componentes. A estrutura do código é organizada para facilitar a manutenção e a escalabilidade, garantindo que as funcionalidades sejam fáceis de implementar e testar.
+
+- **Componentes:** <a id="-componentes"></a>
+  Todos os componentes de interface (GUI) são implementados em arquivos específicos, evitando a mistura de lógica de negócios e apresentação. Isso assegura que cada componente tenha uma única responsabilidade, facilitando a evolução do código.
+
+## 🧙‍♀️ Autor
+
+ <a href="https://www.linkedin.com/in/marcos-samuel-batista-m/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/121835618?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Marcos Samuel</b></sub></a>✨</a>
+ <br />
+---
+
+## 📝 Licença
+
+Feito por:
+<br/>
+Marcos Samuel [LinkedIn](https://www.linkedin.com/in/marcos-samuel-batista-m/)
+<br/>
