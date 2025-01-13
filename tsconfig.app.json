@@ -11,12 +11,11 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "composite": true,
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "moduleDetection": "force",
     "jsx": "react",
-    /* Linting */
+    "emitDeclarationOnly": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
