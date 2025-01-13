@@ -20,11 +20,11 @@
     ],
     "types": [
       "styled-components",
-      "@testing-library/jest-dom",
-      "jest"
+      "cypress",
+      "cypress-react18"
     ]
   },
   "include": [
-    "cypress.d.ts"
+    "cypress.d.ts",
   ]
 }

@@ -12,7 +12,7 @@ export const TooltipMessage = ({ message }: ITooltipMessage) => {
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <IconButton>
+          <IconButton className="TooltipContent">
             <InfoIcon />
           </IconButton>
         </Tooltip.Trigger>

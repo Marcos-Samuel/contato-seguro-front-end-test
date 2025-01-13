@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
       <DropdownContainer>
         <DropdownButton onClick={toggleDropdown}>Menu</DropdownButton>
         {isDropdownOpen && (
-          <DropdownMenu>
+          <DropdownMenu className="dropdown-menu">
             <NavLinkStyled to="/authors">
               {({ isActive }) => (
                 <DropdownItem isActive={isActive}>
