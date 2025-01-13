@@ -1,6 +1,6 @@
-import * as Tooltip from "@radix-ui/react-tooltip";
-import { IconButton, TooltipArrow, TooltipContent } from "./styles";
-import InfoIcon from "../../assets/info.icon";
+import * as Tooltip from '@radix-ui/react-tooltip';
+import { IconButton, TooltipArrow, TooltipContent } from './styles';
+import InfoIcon from '../../assets/info.icon';
 
 interface ITooltipMessage {
   message: React.ReactNode;
@@ -25,4 +25,3 @@ export const TooltipMessage = ({ message }: ITooltipMessage) => {
     </Tooltip.Provider>
   );
 };
-

@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyledTypography } from './styles';
 
-export interface TypographyProps {
-  variant?: 'h1' | 'h2' | 'h3' | 'p' | 'span' | 'strong';
+export interface TypographyProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: 'h1' | 'h2' | 'h3' | 'strong' | 'p' | 'span';
   color?: 'primary' | 'secondary' | 'error';
   size?: string;
   weight?: string;
-  cursor?: 'pointer' | 'default';
-  align?: 'left' | 'center' | 'right';
-  children: React.ReactNode;
+  align?: string;
+  cursor?: string;
+  'data-testid'?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
@@ -17,17 +17,19 @@ const Typography: React.FC<TypographyProps> = ({
   size = '16px',
   weight = 'normal',
   align = 'left',
-  children,
   cursor = 'default',
+  children,
+  ...props
 }) => {
   return (
     <StyledTypography
-      variant={variant}
+      as={variant}
       color={color}
       size={size}
       weight={weight}
       align={align}
       cursor={cursor}
+      {...props}
     >
       {children}
     </StyledTypography>

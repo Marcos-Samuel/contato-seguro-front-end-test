@@ -14,6 +14,7 @@
     "esModuleInterop": true,
     "target": "ESNext",
     "strict": true,
+    "jsx": "react",
     "composite": true,
     "baseUrl": ".",
     "paths": {
@@ -26,7 +27,10 @@
       "./src/types"
     ],
     "types": [
-      "styled-components"
+      "styled-components",
     ]
-  }
+  },
+  "include": [
+    "cypress.d.ts"
+  ]
 }

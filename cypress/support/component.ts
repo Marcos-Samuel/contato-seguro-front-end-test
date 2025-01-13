@@ -14,9 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-
-import { mount } from 'cypress/react18'
+import React from 'react';
+import './commands';
+import { theme } from '../../src/styles/theme';
+import { mount } from 'cypress/react18';
+import { ThemeProvider } from 'styled-components';
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -25,12 +27,17 @@ import { mount } from 'cypress/react18'
 declare global {
   namespace Cypress {
     interface Chainable {
-      mount: typeof mount
+      mount: typeof mount;
+
+      mountWithTheme(component: React.ReactNode): Chainable<Element>;
     }
   }
 }
 
-Cypress.Commands.add('mount', mount)
+// Solução inspirada em uma resposta no StackOverflow.
+// O código foi adaptado para meu contexto com o ThemeProvider do styled-components.
+// Fonte: https://stackoverflow.com/questions/72648883/how-do-i-add-the-styling-of-chakra-ui-into-cypress-component-testing
 
-// Example use:
-// cy.mount(<MyComponent />)
+Cypress.Commands.add('mount', (jsx, options) =>
+  mount(React.createElement(ThemeProvider, { theme }, jsx), options)
+);

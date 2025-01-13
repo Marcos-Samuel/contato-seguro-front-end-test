@@ -1,43 +1,12 @@
 import styled from 'styled-components';
-import { TypographyProps } from '.';
 
-export const StyledTypography = styled.div<TypographyProps>`
-  font-size: ${(props) => props.size};
-  font-weight: ${(props) => props.weight};
-  text-align: ${(props) => props.align};
-  margin: 0;
-  cursor: ${(props) => props.cursor};
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 350px;
-  ${(props) =>
-    props.variant === 'h1' &&
-    `
-    font-size: 2.5rem;
-    font-weight: bold;
-  `}
-
-  ${(props) =>
-    props.variant === 'h2' &&
-    `
-    font-size: 2rem;
-    font-weight: semi-bold;
-  `}
-
-  ${(props) =>
-    props.variant === 'h3' &&
-    `
-    font-size: 1.5rem;
-    font-weight: normal;
-  `}
-
-${(props) =>
-    props.variant === 'strong' &&
-    `
-    font-weight: bold;
-  `}
-  
+export const StyledTypography = styled.div<{
+  color?: 'primary' | 'secondary' | 'error';
+  size?: string;
+  weight?: string;
+  align?: string;
+  cursor?: string;
+}>`
   color: ${({ theme, color }) => {
     switch (color) {
       case 'primary':
@@ -50,4 +19,8 @@ ${(props) =>
         return theme.colors.system.black[500];
     }
   }};
+  font-size: ${({ size }) => size};
+  font-weight: ${({ weight }) => weight};
+  text-align: ${({ align }) => align};
+  cursor: ${({ cursor }) => cursor};
 `;

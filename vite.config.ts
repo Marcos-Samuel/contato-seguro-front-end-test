@@ -10,6 +10,8 @@ export default defineConfig({
     }),
   ],
   server: {
-    port: 5173,
+    proxy: {
+      '/__cypress': 'http://localhost:5173',
+    },
   },
 });

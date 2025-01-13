@@ -16,10 +16,19 @@ export default defineConfig({
             ...baseConfig.server,
             port: 5173,
           },
+          resolve: {
+            extensions: ['.tsx', '.ts', '.js', '.jsx'],
+          },
         };
 
         return modifiedConfig;
       },
     },
+    specPattern: 'cypress/component/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/component.ts',
+  },
+
+  e2e: {
+    setupNodeEvents(on, config) {},
   },
 });

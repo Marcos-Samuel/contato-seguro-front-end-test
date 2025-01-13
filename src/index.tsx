@@ -9,16 +9,16 @@ import { BookProvider } from './contexts/BookContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Theme>
-      <BrowserRouter>
-        <AppTheme>
+    <AppTheme>
+      <Theme>
+        <BrowserRouter>
           <BookProvider>
             <AuthorProvider>
               <MyRoutes />
             </AuthorProvider>
           </BookProvider>
-        </AppTheme>
-      </BrowserRouter>
-    </Theme>
+        </BrowserRouter>
+      </Theme>
+    </AppTheme>
   </StrictMode>
 );
