@@ -33,7 +33,7 @@ const AuthorContext = createContext<AuthorContextProps | undefined>(undefined);
 export const AuthorProvider: React.FC<AuthorProviderProps> = ({ children }) => {
   const [authors, setAuthors] = useState<Author[]>([]);
   const [error, setError] = useState<string>();
-  const { books, deleteBook } = useBookContext();
+  const { books, deleteBook, setBooks } = useBookContext();
 
   useEffect(() => {
     const storedAuthors = getFromLocalStorage<Author>(AUTHORS_KEY) || [];
@@ -93,6 +93,9 @@ export const AuthorProvider: React.FC<AuthorProviderProps> = ({ children }) => {
         deleteBook(book.id);
       }
     });
+
+    const filteredBooks = books.filter((book) => book.author_id !== id);
+    setBooks(filteredBooks);
   };
 
   const getBooksByAuthor = (authorId: string) => {

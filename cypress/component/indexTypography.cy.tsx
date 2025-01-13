@@ -1,13 +1,17 @@
 import React from 'react';
 import Typography from '../../src/components/Typography/index';
 import { mount } from 'cypress/react18';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../src/styles/theme';
 
 describe('Typography Component', () => {
   it('deve renderizar com a variante h1', () => {
     mount(
-      <Typography variant="h1" size="32px" weight="bold">
-        Título
-      </Typography>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h1" size="32px" weight="bold">
+          Título
+        </Typography>
+      </ThemeProvider>
     );
 
     cy.get('h1').should('be.visible').contains('Título');
@@ -17,9 +21,11 @@ describe('Typography Component', () => {
 
   it('deve renderizar com a cor primária', () => {
     mount(
-      <Typography color="primary" size="16px">
-        Texto Primário
-      </Typography>
+      <ThemeProvider theme={theme}>
+        <Typography color="primary" size="16px">
+          Texto Primário
+        </Typography>{' '}
+      </ThemeProvider>
     );
 
     cy.get('p').should('have.css', 'color').and('eq', 'rgb(139, 102, 255)');
@@ -27,9 +33,11 @@ describe('Typography Component', () => {
 
   it('deve renderizar com o tamanho e peso personalizados', () => {
     mount(
-      <Typography size="20px" weight="500">
-        Texto Personalizado
-      </Typography>
+      <ThemeProvider theme={theme}>
+        <Typography size="20px" weight="500">
+          Texto Personalizado
+        </Typography>{' '}
+      </ThemeProvider>
     );
 
     cy.get('p').should('have.css', 'font-size', '20px');
@@ -37,22 +45,32 @@ describe('Typography Component', () => {
   });
 
   it('deve renderizar com alinhamento à esquerda', () => {
-    mount(<Typography align="left">Texto Alinhado à Esquerda</Typography>);
+    mount(
+      <ThemeProvider theme={theme}>
+        <Typography align="left">Texto Alinhado à Esquerda</Typography>{' '}
+      </ThemeProvider>
+    );
 
     cy.get('p').should('have.css', 'text-align', 'left');
   });
 
   it('deve renderizar com o cursor pointer', () => {
-    mount(<Typography cursor="pointer">Texto com Cursor Pointer</Typography>);
+    mount(
+      <ThemeProvider theme={theme}>
+        <Typography cursor="pointer">Texto com Cursor Pointer</Typography>{' '}
+      </ThemeProvider>
+    );
 
     cy.get('p').should('have.css', 'cursor', 'pointer');
   });
 
   it('deve aceitar um data-testid e ser visível', () => {
     mount(
-      <Typography data-testid="typography-test" size="18px">
-        Texto com Test ID
-      </Typography>
+      <ThemeProvider theme={theme}>
+        <Typography data-testid="typography-test" size="18px">
+          Texto com Test ID
+        </Typography>{' '}
+      </ThemeProvider>
     );
 
     cy.get('[data-testid="typography-test"]')
@@ -61,7 +79,11 @@ describe('Typography Component', () => {
   });
 
   it('deve renderizar o texto com a variante p (padrão)', () => {
-    mount(<Typography>Texto Padrão</Typography>);
+    mount(
+      <ThemeProvider theme={theme}>
+        <Typography>Texto Padrão</Typography>{' '}
+      </ThemeProvider>
+    );
 
     cy.get('p').should('be.visible').contains('Texto Padrão');
   });

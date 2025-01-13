@@ -6,15 +6,16 @@ import {
   Table,
   TableAction,
   TableDescriptions,
-  TableHead,
   TableRow,
-  THeader,
 } from './styles';
 import AlertDialogComponent from '../AlertDialog';
 import { useAuthorContext } from '../../contexts/AuthorContext';
 import { useBookContext } from '../../contexts/BookContext';
 import Modal from '../Modal';
 import Typography from '../Typography';
+import useSort from '../../hooks/useSort';
+import TableHeaders from './TableHeader';
+import { Book } from '../../models/interface/api/book.interface';
 
 interface TableComponentProps {
   isBook: 'Book' | 'Author';
@@ -33,16 +34,21 @@ const headers = {
     { key: '', label: '' },
   ],
 };
+
 const messageBook = 'Você tem certeza que gostaria de deletar esse livro?';
 const messageAuthor =
   'Todos os livros vinculados a esse Autor serão deletados juntos! Você tem certeza que gostaria de deletar esse Autor?';
 
 const TableComponent: React.FC<TableComponentProps> = ({ isBook }) => {
   const [currentModalId, setCurrentModalId] = useState<string | null>(null);
-
   const message = isBook === 'Book' ? messageBook : messageAuthor;
   const { authors, deleteAuthor, getBooksByAuthor } = useAuthorContext();
   const { books, deleteBook } = useBookContext();
+
+  const { handleSort, sortedData } = useSort(
+    isBook === 'Book' ? books : (authors as Book[]),
+    'name'
+  );
 
   const handleDelete = isBook === 'Book' ? deleteBook : deleteAuthor;
 
@@ -128,23 +134,22 @@ const TableComponent: React.FC<TableComponentProps> = ({ isBook }) => {
     );
   };
 
-  const data = isBook === 'Book' ? books : authors;
-
   return (
     <Conteiner>
       <Table>
-        <THeader>
-          <TableRow>
-            {headers[isBook].map((header) => (
-              <TableHead key={header.key}>{header.label}</TableHead>
-            ))}
-          </TableRow>
-        </THeader>
+        <TableHeaders headers={headers[isBook]} onSort={handleSort} />
 
         <Body>
-          {data.map((item) => (
-            <TableRow key={item.id}>{renderTableRow(item)}</TableRow>
-          ))}
+          {sortedData.length === 0 ? (
+            <Typography>
+              {`
+              Nenhum ${isBook === 'Book' ? 'livro' : 'autor'} encontrado que tal adicionar um?`}
+            </Typography>
+          ) : (
+            sortedData.map((item) => (
+              <TableRow key={item.id}>{renderTableRow(item)}</TableRow>
+            ))
+          )}
         </Body>
       </Table>
     </Conteiner>

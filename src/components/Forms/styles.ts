@@ -65,6 +65,13 @@ export const Select = styled.select`
   padding: 0 10px;
   font-size: 15px;
   line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
   color: ${({ theme }) => theme.colors.primary.purple[400]};
   box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.primary.purple[200]};
   height: 35px;
@@ -72,19 +79,18 @@ export const Select = styled.select`
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary.purple[400]};
   }
 `;
+
 export const Option = styled.option`
   background-color: ${({ theme }) => theme.colors.system.black[100]};
   color: ${({ theme }) => theme.colors.primary.purple[400]};
   padding: 8px;
-  font-size: 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary.purple[100]};
-  }
-
-  &:selected {
-    background-color: ${({ theme }) => theme.colors.primary.purple[200]};
-    color: ${({ theme }) => theme.colors.system.black[100]};
   }
 `;
 

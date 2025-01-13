@@ -8,6 +8,7 @@ interface ISidBar {
 export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
+  flex: 1;
 
   @media (max-width: 768px) {
     justify-content: center;

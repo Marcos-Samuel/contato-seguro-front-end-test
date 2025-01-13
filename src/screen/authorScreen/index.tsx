@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
 import NavBar from '../../components/NavBar';
-import { Container, ContentModal } from './styles';
+import { Main, ContentModal } from './styles';
 import TableComponent from '../../components/TableComponent';
 import Modal from '../../components/Modal';
 import FormAuthor from '../../components/Forms/FormAuthor';
 import { TooltipMessage } from '../../components/Tooltip';
+import Footer from '../../components/Footer';
 
 const AuthorScreen: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,7 +14,7 @@ const AuthorScreen: React.FC = () => {
     <>
       <Header title="Autores" />
       <NavBar />
-      <Container>
+      <Main>
         <ContentModal>
           <TooltipMessage
             message={
@@ -34,7 +35,8 @@ const AuthorScreen: React.FC = () => {
         </ContentModal>
 
         <TableComponent isBook={'Author'} />
-      </Container>
+      </Main>
+      <Footer />
     </>
   );
 };

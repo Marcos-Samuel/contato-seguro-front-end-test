@@ -14,7 +14,7 @@ export const StyledTypography = styled.div<{
       case 'secondary':
         return theme.colors.system.black[300];
       case 'error':
-        return theme.colors.system.error[300];
+        return theme.colors.system.error[500];
       default:
         return theme.colors.system.black[500];
     }
@@ -23,4 +23,12 @@ export const StyledTypography = styled.div<{
   font-weight: ${({ weight }) => weight};
   text-align: ${({ align }) => align};
   cursor: ${({ cursor }) => cursor};
+  max-width: 380px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 768px) {
+    max-width: 250px;
+  }
 `;

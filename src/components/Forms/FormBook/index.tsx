@@ -19,6 +19,7 @@ import { FormBookData } from '../../../models/interface/form/book.interface';
 import { bookSchema } from '../../../models/schemas/book.schema';
 import { useBookContext } from '../../../contexts/BookContext';
 import Button from '../../Button';
+import { limitText } from '../../../utils/stringUtils';
 
 interface FormBookProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,8 +37,6 @@ const FormBook: React.FC<FormBookProps> = ({ setOpen }) => {
   });
 
   const onSubmit = (data: FormBookData) => {
-    console.log(data);
-
     const newBook: Book = {
       id: uuidv4(),
       name: data.name,
@@ -67,7 +66,7 @@ const FormBook: React.FC<FormBookProps> = ({ setOpen }) => {
           <Option value="">Seleciona Autor</Option>
           {authors.map((author) => (
             <Option key={author.id} value={author.id}>
-              {author.name}
+              {limitText(author.name)}
             </Option>
           ))}
         </Select>

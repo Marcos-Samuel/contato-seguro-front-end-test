@@ -18,6 +18,7 @@ interface BookContextProps {
   addBook: (book: Book) => void;
   updateBook: (updatedBook: Book) => void;
   deleteBook: (id: string) => void;
+  setBooks: React.Dispatch<React.SetStateAction<Book[]>>;
 }
 
 interface BookProviderProps {
@@ -55,7 +56,9 @@ export const BookProvider: React.FC<BookProviderProps> = ({ children }) => {
   };
 
   return (
-    <BookContext.Provider value={{ books, addBook, updateBook, deleteBook }}>
+    <BookContext.Provider
+      value={{ books, addBook, updateBook, deleteBook, setBooks }}
+    >
       {children}
     </BookContext.Provider>
   );
@@ -64,7 +67,7 @@ export const BookProvider: React.FC<BookProviderProps> = ({ children }) => {
 export const useBookContext = () => {
   const context = useContext(BookContext);
   if (!context) {
-    throw new Error('useBookContext must be used within a BookProvider');
+    throw new Error('useBookContext deve ser usado dentro de um BookProvider');
   }
   return context;
 };

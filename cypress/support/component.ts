@@ -37,7 +37,6 @@ declare global {
 // Solução inspirada em uma resposta no StackOverflow.
 // O código foi adaptado para meu contexto com o ThemeProvider do styled-components.
 // Fonte: https://stackoverflow.com/questions/72648883/how-do-i-add-the-styling-of-chakra-ui-into-cypress-component-testing
-
 Cypress.Commands.add('mount', (jsx, options) =>
   mount(React.createElement(ThemeProvider, { theme }, jsx), options)
 );

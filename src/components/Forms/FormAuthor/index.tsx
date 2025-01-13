@@ -59,7 +59,7 @@ const FormAuthor: React.FC<FormAuthorProps> = ({ setOpen }) => {
         <Label>E-mail</Label>
         <Input {...register('email')} />
         {errors.email && (
-          <Typography variant="span" size="12px" color="primary">
+          <Typography variant="span" size="12px" color="error">
             {errors.email.message}
           </Typography>
         )}

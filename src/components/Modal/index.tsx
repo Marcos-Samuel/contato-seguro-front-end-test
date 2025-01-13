@@ -3,7 +3,6 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { Content, ContentIcon, Overlay, StyledIconButton } from './styles';
 import Typography from '../Typography';
-import { theme } from '../../styles/theme';
 import ButtonComponent from '../Button';
 
 interface ModalProps {

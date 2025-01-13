@@ -61,6 +61,10 @@ export const StyledIconButton = styled(ThemeIconButton)`
   justify-content: flex-end;
   cursor: pointer;
 
+  @media (max-width: 350px) {
+    left: 250px;
+  }
+
   &:hover {
     transform: scale(1.2);
   }
@@ -78,15 +82,14 @@ export const IconButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   top: 10px;
   right: 10px;
 
   &:hover {
-    background-color: var(--violet-4);
+    background-color: ${theme.colors.primary.purple[300]};
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px var(--violet-7);
+    box-shadow: 0 0 0 2px ${theme.colors.primary.purple[200]};
   }
 `;
