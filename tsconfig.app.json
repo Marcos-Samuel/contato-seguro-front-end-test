@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
@@ -10,24 +9,28 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
-    "composite": true,
+    /* Bundler mode */
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
-    "moduleDetection": "force",
-    "jsx": "react",
-    "emitDeclarationOnly": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "types": [
-      "jest",
-      "@testing-library/jest-dom"
-    ]
+    //absolute import
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
-    "src",
-    "src/models/interface/api/book.interface.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }

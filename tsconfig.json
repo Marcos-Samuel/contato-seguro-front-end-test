@@ -9,12 +9,6 @@
     }
   ],
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "target": "ESNext",
-    "strict": true,
-    "jsx": "react",
     "baseUrl": ".",
     "paths": {
       "*": [
@@ -25,12 +19,12 @@
       "./node_modules/@types"
     ],
     "types": [
-      "styled-components"
-    ],
-    "noEmit": true
+      "styled-components",
+      "@testing-library/jest-dom",
+      "jest"
+    ]
   },
   "include": [
-    "cypress.d.ts",
-    "src/**/*"
+    "cypress.d.ts"
   ]
 }
