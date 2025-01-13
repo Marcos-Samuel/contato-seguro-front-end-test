@@ -1,3 +1,5 @@
+import React from 'react';
+
 const InfoIcon = ({ height = 24, width = 24, color = '#666666', ...props }) => {
   return (
     <svg
