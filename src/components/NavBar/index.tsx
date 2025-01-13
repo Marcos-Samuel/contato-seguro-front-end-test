@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Aside,
   NavLinkStyled,
@@ -10,9 +10,9 @@ import {
   DropdownButton,
   DropdownMenu,
   DropdownItem,
-} from "./styles";
-import BookIcon from "../../assets/book.Icon";
-import AuthorIcon from "../../assets/author.Icon";
+} from './styles';
+import BookIcon from '../../assets/book.Icon';
+import AuthorIcon from '../../assets/author.Icon';
 
 const NavBar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -24,25 +24,23 @@ const NavBar: React.FC = () => {
   return (
     <Aside>
       <DropdownContainer>
-        <DropdownButton onClick={toggleDropdown}>
-          Menu
-        </DropdownButton>
+        <DropdownButton onClick={toggleDropdown}>Menu</DropdownButton>
         {isDropdownOpen && (
           <DropdownMenu>
-              <NavLinkStyled to="/authors">
+            <NavLinkStyled to="/authors">
               {({ isActive }) => (
                 <DropdownItem isActive={isActive}>
                   <AuthorIcon isActive={isActive} />
                   <Text isActive={isActive}>Autores</Text>
                 </DropdownItem>
-                )}
-              </NavLinkStyled>
-         
+              )}
+            </NavLinkStyled>
+
             <NavLinkStyled to="/">
-            {({ isActive }) => (
-              <DropdownItem isActive={isActive}>
-                <BookIcon isActive={isActive} />
-                <Text isActive={isActive}>Livros</Text>
+              {({ isActive }) => (
+                <DropdownItem isActive={isActive}>
+                  <BookIcon isActive={isActive} />
+                  <Text isActive={isActive}>Livros</Text>
                 </DropdownItem>
               )}
             </NavLinkStyled>
@@ -52,19 +50,19 @@ const NavBar: React.FC = () => {
 
       <SidebarContainer>
         <SidebarContent>
-          <NavLinkStyled to="/authors">
-            {({ isActive }) => (
-              <SidebarItem isActive={isActive}>
-                <AuthorIcon isActive={isActive} />
-                <Text isActive={isActive}>Autores</Text>
-              </SidebarItem>
-            )}
-          </NavLinkStyled>
           <NavLinkStyled to="/">
             {({ isActive }) => (
               <SidebarItem isActive={isActive}>
                 <BookIcon isActive={isActive} />
                 <Text isActive={isActive}>Livros</Text>
+              </SidebarItem>
+            )}
+          </NavLinkStyled>
+          <NavLinkStyled to="/authors">
+            {({ isActive }) => (
+              <SidebarItem isActive={isActive}>
+                <AuthorIcon isActive={isActive} />
+                <Text isActive={isActive}>Autores</Text>
               </SidebarItem>
             )}
           </NavLinkStyled>
