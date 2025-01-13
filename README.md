@@ -92,6 +92,7 @@ O projeto estara disponivel na rota:
 http://localhost:5173/
 
 ## 📝 DEPLOY
+[Deplay](https://contato-seguro-front-end-test-nbiz-gekev93kd.vercel.app)
 
 ## 📝 Estrutura do Projeto
 
