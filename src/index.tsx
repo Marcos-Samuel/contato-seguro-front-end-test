@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppTheme } from './contexts/ThemeContext';
 import { AuthorProvider } from './contexts/AuthorContext';
 import { BookProvider } from './contexts/BookContext';
-import React from 'react';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

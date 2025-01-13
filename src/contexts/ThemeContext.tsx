@@ -3,8 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { ReactNode } from 'react';
 import { GlobalStyle } from '../styles/globalStyles';
 import { theme } from '../styles/theme';
-import React from 'react';
-
 interface AppThemeProps {
   children: ReactNode;
 }
